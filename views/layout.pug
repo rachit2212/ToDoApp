@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/styles/bootstrap.min.css')
+    block head
+    //link(rel='stylesheet', href='/styles/style.css')
+  body
+    block content
+
+    script(src="/js/dependencies/jquery-3.2.1.min.js")
+    script(src="/js/dependencies/bootstrap.min.js")
+    script(src="/js/bundle.js")
+    block scripts
+
