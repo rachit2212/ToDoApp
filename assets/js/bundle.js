@@ -12609,7 +12609,6 @@ var ToDoComponent = function (_Component) {
   function ToDoComponent(props) {
     _classCallCheck(this, ToDoComponent);
 
-    console.log(props, 'props---------------');
     return _possibleConstructorReturn(this, (ToDoComponent.__proto__ || Object.getPrototypeOf(ToDoComponent)).call(this, props));
   }
 
@@ -12629,7 +12628,6 @@ var ToDoComponent = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this.props, 'props in render');
       var style = {
         'textAlign': 'center'
       };
@@ -12731,37 +12729,38 @@ var ToDoList = function (_Component) {
   }
 
   _createClass(ToDoList, [{
-    key: "renderList",
+    key: 'renderList',
     value: function renderList(list) {
       list = list.map(function (toDoItem) {
-        /*<div className="checkbox">
-          <label>
-            <input type="checkbox" />
-          </label>
-        </div>*/
-        _react2.default.createElement(
-          "li",
+        console.log(toDoItem);
+        return _react2.default.createElement(
+          'li',
           { key: toDoItem.id },
-          _react2.default.createElement("input", { type: "checkbox", value: toDoItem.id }),
-          " ",
           toDoItem.value
         );
       });
-      return list;
+
+      console.log('HMMMMMM', list);
+
+      return _react2.default.createElement(
+        'ul',
+        null,
+        list
+      );
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { id: "todo-list", className: "row" },
+        'div',
+        { id: 'todo-list', className: 'row' },
         _react2.default.createElement(
-          "div",
-          { className: "col-sm-4 col-sm-offset-4" },
+          'div',
+          { className: 'col-sm-4 col-sm-offset-4' },
           !this.props.list || this.props.list.length === 0 ? _react2.default.createElement(
-            "span",
+            'span',
             null,
-            "No Item present in to do list"
+            'No Item present in to do list'
           ) : this.renderList(this.props.list)
         )
       );

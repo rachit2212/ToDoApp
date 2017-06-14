@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux';
 
 class ToDoComponent extends Component{
   constructor(props){
-    console.log(props,'props---------------')
     super(props);
   }
   addNewPost(e){
@@ -21,7 +20,6 @@ class ToDoComponent extends Component{
   }
 
   render(){
-    console.log(this.props, 'props in render')
     var style = {
       'textAlign': 'center'
     };
